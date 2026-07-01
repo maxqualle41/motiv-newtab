@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MotivNewTab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="canvas">
+    <header class="topbar">
+      <h1>Guten Tag</h1>
+      <div class="meta">
+        <div id="time" class="time"></div>
+      </div>
+    </header>
+
+    <main class="maingrid">
+      <section class="panel todo-panel">
+        <div class="panel-head">
+          <h2>To‑Do</h2>
+        </div>
+        <div class="todo-input">
+          <input id="newTodo" placeholder="Neue Aufgabe..." />
+          <button id="addTodo">Hinzufügen</button>
+        </div>
+        <ul id="todoList" class="todos"></ul>
+        <div class="panel-foot">
+          <button id="clearDone" class="muted">Erledigte löschen</button>
+          <button id="clearAll" class="muted">Alles löschen</button>
+        </div>
+      </section>
+
+      <aside class="panel quote-panel">
+        <div class="panel-head">
+          <h2>Motivation</h2>
+        </div>
+        <div id="quoteText" class="quote"></div>
+        <div class="quote-controls">
+          <button id="prevQuote">◀</button>
+          <button id="nextQuote">▶</button>
+          <label class="auto"><input type="checkbox" id="autoRotate"> Automatisch</label>
+        </div>
+        <div class="panel-foot small">Tipp: Benutze die Pfeile oder aktiviere Automatik.</div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <a id="openSettings" href="#">MotivNewTab</a>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

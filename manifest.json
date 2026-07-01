@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "MotivNewTab",
+  "version": "1.1",
+  "description": "Clean New Tab: To-Do + Spruch, minimal & stylish",
+  "icons": {
+    "128": "icons/icon.svg"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "action": {
+    "default_title": "MotivNewTab",
+    "default_icon": "icons/icon.svg"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage"
+  ]
+}

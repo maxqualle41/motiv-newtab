@@ -1,0 +1,76 @@
+:root{
+  --bg1:#0f1724;
+  --bg2:#041021;
+  --card: rgba(255,255,255,0.05);
+  --accent:#7c3aed;
+  --muted:#9aa4b2;
+  --text:#e6eef6;
+  --bg-img: none; /* wird per JS gesetzt */
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);}
+
+/* Hintergrund: Bild + dunkler Overlay */
+body{
+  min-height:100vh;
+  background-color:var(--bg2);
+  background-image:
+    linear-gradient(rgba(4,6,16,0.55), rgba(4,6,16,0.55)),
+    var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-image 400ms ease-in-out;
+}
+
+/* Sanfte Bewegung / Parallax-Feeling (subtil) */
+@keyframes slow-pan {
+  0% { background-position: center 45%; }
+  50% { background-position: center 55%; }
+  100% { background-position: center 45%; }
+}
+body { animation: slow-pan 30s linear infinite; }
+
+/* Canvas & Karten */
+.canvas{
+  min-height:100vh;
+  padding:28px;
+  backdrop-filter: blur(4px);
+}
+
+/* Top */
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.topbar h1{margin:0;font-size:28px}
+.time{color:var(--muted);font-weight:600}
+
+/* Layout */
+.maingrid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+.panel{background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.30));backdrop-filter: blur(6px);
+      border-radius:14px;padding:16px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.panel-head h2{margin:0 0 8px 0;font-size:18px}
+.todo-input{display:flex;gap:8px;margin-bottom:12px}
+.todo-input input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);color:inherit}
+.todo-input button{padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#4f46e5);color:white;cursor:pointer}
+.todos{list-style:none;padding:0;margin:0}
+.todos li{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);margin-bottom:8px}
+.todos li .text{flex:1}
+.todo-done{text-decoration:line-through;opacity:0.6}
+.muted{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px;border-radius:10px;cursor:pointer}
+.panel-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.small{font-size:12px;color:var(--muted)}
+
+/* Quote panel */
+.quote{font-size:18px;font-style:italic;margin:12px 0;padding:10px;border-radius:8px;background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(79,70,229,0.04))}
+.quote-controls{display:flex;gap:8px;align-items:center}
+.quote-controls button{padding:6px 10px;border-radius:8px;border:0;background:rgba(255,255,255,0.04);color:var(--text);cursor:pointer}
+.auto{margin-left:auto;color:var(--muted);font-size:13px}
+
+/* Footer */
+.footer{text-align:center;margin-top:24px;color:var(--muted)}
+.footer a{color:var(--muted);text-decoration:none;font-weight:600}
+
+/* Responsive */
+@media (max-width:1000px){
+  .maingrid{grid-template-columns:1fr; }
+  .quote-panel{order:2}
+}
