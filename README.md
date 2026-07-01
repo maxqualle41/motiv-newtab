@@ -12,4 +12,4 @@ Installation (Entwicklung)
 Hinweis
 - Opera kann das automatische Überschreiben der New‑Tab Seite (chrome_url_overrides) in einigen Profilen blockieren. In diesem Fall funktioniert das Laden in Chrome; alternativ kannst du das Toolbar‑Icon klicken, um die Seite zu öffnen.
 
-License: MIT
+License: All Rights Reserved (Siehe LICENSE Datei)
